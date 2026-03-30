@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Sign in page for ShowtimeHub movie booking with form validation and dark mode support.">
+	<meta name="keywords" content="signin, authentication, movie booking, accessible, responsive">
+	<meta name="author" content="G UDAY KIRAN">
+	<title>ShowtimeHub – Sign In</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/as-alert-message.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/sign-in.css">
+</head>
+
+<body>
+	<a class="skip-link" href="#container_signup_signin" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">
+		Skip to sign in section
+	</a>
+	<header id="site-header" class="w3l-header fixed-top">
+		<!--/nav-->
+		<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+			<div class="container">
+				<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
+							aria-hidden="true"></span>
+							ShowtimeHub </a></h1>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				</div>
+				<div class="Login_SignUp" id="login_s">
+					<!-- style="font-size: 2rem ; display: inline-block; position: relative;" -->
+					<!-- <li class="nav-item"> -->
+					<a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a>
+					<!-- </li> -->
+				</div>
+				<!-- toggle switch for light and dark theme -->
+				<div class="mobile-position">
+					<nav class="navigation">
+						<div class="theme-switch-wrapper">
+							<label class="theme-switch" for="checkbox">
+								<input type="checkbox" id="checkbox">
+								<div class="mode-container">
+									<i class="gg-sun"></i>
+									<i class="gg-moon"></i>
+								</div>
+							</label>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container_signup_signin" id="container_signup_signin">
+		<div class="form-container sign-up-container">
+			<form name="sign-up-form" action="#" onsubmit="return signUpValidateForm()" aria-label="Create a new account">
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social" aria-label="Continue with Facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social" aria-label="Continue with Google"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social" aria-label="Continue with LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your email for registration</span>
+				<label class="sr-only" for="signup-name">Name</label>
+				<input id="signup-name" name="sign-up-name" type="text" placeholder="Name" required />
+				<label class="sr-only" for="signup-email">Email</label>
+				<input id="signup-email" name="sign-up-email" type="email" placeholder="Email" required />
+				<label class="sr-only" for="signup-passwd">Password</label>\n\t\t\t<div class="password-toggle-wrapper">\n\t\t\t\t<input id="signup-passwd" name="sign-up-passwd" type="password" placeholder="Password" required minlength="8" />\n\t\t\t\t<button type="button" class="password-toggle" id="toggle-signup-pass" aria-label="Show signup password">Show</button>\n\t\t\t</div>
+				<button type="submit">Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form name="sign-in-form" style="color: var(--theme-title);" action="#"
+				onsubmit="return signInValidateForm()" aria-label="Sign in to your account">
+				<h1>Sign in</h1>
+				<div class="social-container">
+					<a href="#" class="social" style="color: var(--theme-title);" aria-label="Continue with Facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social" style="color: var(--theme-title);" aria-label="Continue with Google"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social" style="color: var(--theme-title);" aria-label="Continue with LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your account</span>
+				<label class="sr-only" for="signin-email">Email</label>
+				<input id="signin-email" name="sign-in-email" type="email" placeholder="Email" required />
+				<label class="sr-only" for="signin-passwd">Password</label>\n\t\t\t<div class="password-toggle-wrapper">\n\t\t\t\t<input id="signin-passwd" name="sign-in-passwd" type="password" placeholder="Password" required minlength="8" />\n\t\t\t\t<button type="button" class="password-toggle" id="toggle-signin-pass" aria-label="Show signin password">Show</button>\n\t\t\t</div>
+				<a href="#">Forgot your password?</a>
+				<button type="submit">Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your login details</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Register and book your tickets now!!!</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/as-alert-message.min.js"></script>
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<!--/theme-change-->
+	<script src="assets/js/theme-change.js"></script>
+	<!-- disable body scroll which navbar is in active -->
+	<script>
+		$(function () {
+			$('.navbar-toggler').click(function () {
+				$('body').toggleClass('noscroll');
+			})
+		});
+	</script>
+	<!-- disable body scroll which navbar is in active -->
+	<!--/MENU-JS-->
+	<script>
+		$(window).on("scroll", function () {
+			var scroll = $(window).scrollTop();
+
+			if (scroll >= 80) {
+				$("#site-header").addClass("nav-fixed");
+			} else {
+				$("#site-header").removeClass("nav-fixed");
+			}
+		});
+
+		//Main navigation Active Class Add Remove
+		$(".navbar-toggler").on("click", function () {
+			$("header").toggleClass("active");
+		});
+		$(document).on("ready", function () {
+			if ($(window).width() > 991) {
+				$("header").removeClass("active");
+			}
+			$(window).on("resize", function () {
+				if ($(window).width() > 991) {
+					$("header").removeClass("active");
+				}
+			});
+		});
+	</script>
+	<script src="assets/js/project-improvements.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/sign-in.js"></script>
+
+</body>
+
+</html>
+
